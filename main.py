@@ -6,9 +6,7 @@ from src.step1_ingest import step1_ingest
 from src.step2_clean_and_output import step2_clean_and_output
 from src.step3_compute_trends import step3_compute_trends
 
-### WRAP EACH OF THE COMPONENT STEPS IN A MASTER FUNCTION ###
-
-# def master_func():
+### RUN EACH OF THE COMPONENT STEPS ###
     
 # specify URL to scrape
 polls_url = 'https://cdn-dev.economistdatateam.com/jobs/pds/code-test/index.html'
@@ -29,7 +27,7 @@ try:
 
 except:
     print("Warning: polls could not be successfully ingested from page or processed. Legacy polls.csv will be read in.")
-    polls = pd.read_csv('polls.csv')
+    polls = pd.read_csv('outputs/polls.csv')
     # since we won't have done this earlier, we need to extract candidate names from this newly read-in df
     cand_names = polls.columns[~polls.columns.isin(['date','pollster','n'])]
     # and the most recent datestamp will simply be the date of the most recent poll

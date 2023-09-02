@@ -37,7 +37,7 @@ def step1_ingest(polls_url):
 
     # convert text to bs4 object
     try:
-        doc = BeautifulSoup(response.text)
+        doc = BeautifulSoup(response.text, features="html5lib")
     except:
         print("Error: polls page had no scrapeable content")
 

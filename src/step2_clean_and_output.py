@@ -56,7 +56,7 @@ def step2_clean_and_output(polls):
 
     # sort in increasing chronological order
     polls = polls.sort_values(by='date').reset_index(drop=True)
-
+    
     # ensure numeric columns are in fact numeric
     try:
         polls.loc[:, ~polls.columns.isin(['date','pollster'])] = polls.loc[:, ~polls.columns.isin(['date','pollster'])].\
@@ -64,6 +64,9 @@ def step2_clean_and_output(polls):
         print(f"Sample and poll values successfully converted to numeric at {getSnapshotTime()}")
     except:
         print("Error: Some sample and/ or poll values found unable to be converted to numeric")
+        
+    print(polls.head())
+    print(polls.dtypes)
 
     # ensure candidate polling totals are scaled to the correct order of magnitude
     cand_names = polls.columns[~polls.columns.isin(['date','pollster','n'])]
