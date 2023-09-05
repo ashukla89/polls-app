@@ -34,12 +34,14 @@ def step1_ingest(polls_url):
 
     # read in page HTML
     response = get_response(polls_url)
+    
+    print(response.text)
 
     # convert text to bs4 object
     try:
         doc = BeautifulSoup(response.text, features="html5lib")
     except:
-        print("Error: polls page had no scrapeable content")
+        print("Error: content of polls page could not be read")
 
     # extract most recent update date, for error-handling purposes
     datestamp = get_datestamp(doc)

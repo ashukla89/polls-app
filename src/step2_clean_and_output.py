@@ -49,7 +49,7 @@ def step2_clean_and_output(polls):
     
     # ensure date is date format
     try:
-        polls['date'] = pd.to_datetime(polls['date']).dt.date
+        polls['date'] = pd.to_datetime(polls['date'],format='mixed').dt.date
         print(f"Poll dates successfully converted to datetime format at {getSnapshotTime()}")
     except:
         print("Error: At least some poll dates found unable to be converted to datetime")
