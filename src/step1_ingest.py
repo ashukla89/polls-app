@@ -37,7 +37,7 @@ def step1_ingest(polls_url):
 
     # convert text to bs4 object
     try:
-        doc = BeautifulSoup(response.text) #, features="html5lib")
+        doc = BeautifulSoup(response.text, features='html.parser')
     except:
         print("Error: content of polls page could not be read")
 
