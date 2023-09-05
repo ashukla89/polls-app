@@ -11,7 +11,7 @@ This app consists of three scripts yoked together by a wrapper, `main.py`:
     * For candidates included in two polls taken on the same date, the smoothed polling values were simply averaged for that date.
 
 ## Requirements/ Setup
-Python is notoriously finicky when it comes to versioning. Still, this should be lightweight enough to run from a typical Python 3.9 environment after doing a quick `pip install requirements.txt`, which should get you the necessary versions of pandas, numpy, statsmodels, etc.
+Python is notoriously finicky when it comes to versioning. Still, this should be lightweight enough to run from a typical Python 3.9 environment after doing a quick `pip install -r requirements.txt`, which should get you the necessary versions of pandas, numpy, statsmodels, etc.
 
 ## Running the app
 This, hopefully, is the easy part. Simply run `python3 main.py` every time you'd like to run the whole shebang.
